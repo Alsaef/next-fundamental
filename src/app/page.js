@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 
 const  Home = ()=> {
   const [toods,setToods]=useState([])
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+
   useEffect(()=>{
-    fetch(`${process.env.baseUrl}/api/blog`).then(res=>res.json()).then(data=>setToods(data.data))
+    fetch(`${apiUrl}/api/blog`).then(res=>res.json()).then(data=>setToods(data.data))
   },[])
   return (
     <div>
