@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const  Home = ()=> {
   const [toods,setToods]=useState([])
   useEffect(()=>{
-    fetch('http://localhost:3000/api/blog').then(res=>res.json()).then(data=>setToods(data.data))
+    fetch(`${process.env.baseUrl}/api/blog`).then(res=>res.json()).then(data=>setToods(data.data))
   },[])
   return (
     <div>

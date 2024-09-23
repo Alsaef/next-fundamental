@@ -2,7 +2,7 @@ import Counter from '@/Components/counter/Counter';
 import React from 'react';
 
 const page =async () => {
-    const res= await fetch('http://localhost:3000/api/blog')
+    const res= await fetch(`${process.env.baseUrl}/api/blog`)
     const data=await res.json()
     const blogs= data.data
     return (
